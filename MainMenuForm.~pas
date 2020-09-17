@@ -1,0 +1,64 @@
+unit MainMenuForm;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TMainMenu = class(TForm)
+    EasyButton: TButton;
+    HardButton: TButton;
+    VeryHardButton: TButton;
+    GameNameLbl: TLabel;
+    TimerTestButton: TButton;
+    procedure EasyButtonClick(Sender: TObject);
+    procedure HardButtonClick(Sender: TObject);
+    procedure VeryHardButtonClick(Sender: TObject);
+    procedure TimerTestButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MainMenu: TMainMenu;
+  SecondsTemp: Integer;
+
+implementation
+uses
+  MazeForm;
+
+{$R *.dfm}
+
+procedure TMainMenu.EasyButtonClick(Sender: TObject);
+begin
+  Seconds:= 120;
+  Maze.Show;
+  MainMenu.Visible:= False;
+end;
+
+procedure TMainMenu.HardButtonClick(Sender: TObject);
+begin
+  SecondsTemp:= 60;
+  Maze.Show;
+  MainMenu.Visible:= False;
+end;
+
+procedure TMainMenu.VeryHardButtonClick(Sender: TObject);
+begin
+  SecondsTemp:= 45;
+  Maze.Show;
+  MainMenu.Visible:= False;
+end;
+
+procedure TMainMenu.TimerTestButtonClick(Sender: TObject);
+begin
+  SecondsTemp:= 5;
+  Maze.Show;
+  MainMenu.Visible:= False;
+end;
+
+end.
